@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b510cbea573b734f92e1fe907cbff20, type: 3}
+  m_Name: SnakeSettings
+  m_EditorClassIdentifier: 
+  snakeBlowUpDelta: 0.05
+  snakeHorizontalSpeed: 15
+  snakeSegmentPrefab: {fileID: 2736531503817448904, guid: 797f27cb15e90ed4c8b5a6395283e603, type: 3}
+  spawnOffset: 0.75
+  targetRaycastLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  maxRaycastDistance: 150
+  minDistanceToRaycastTarget: 0.001
+  maxDegreePerSec: 600
+  snakeSpeedGain: 75
+  maxMarkersPerSegment: 10
+  snakeMaxSegments: 10
+  enableSine: 1
+  sinWavePeriod: 4
+  sinWaveAmplitude: 0.25
+  sinWaveSpeed: 4
+  distanceToMaxWaveAmplitude: 7
+  meshdeltaSpeed: 1
+  collisionCollidersMaxCount: 30
+  foodConsumptionRange: 1.25
+  foodConsumptionMaxAngle: 25
+  confidentFoodConsumptionRange: 0.75
+  foodConsumptionLayerMask:
+    serializedVersion: 2
+    m_Bits: 1536
+  timeToConsume: 0.4
+  minConsumableScale: 0.25
+  boostConsumptionRange: 12.5
+  boostConsumptionMaxAngle: 45
+  boostConsumptionLayerMask:
+    serializedVersion: 2
+    m_Bits: 3584
+  consumptionRangeGain: 5
+  boostValuePerJewel: 0.4
+  boostValueGain: 1
+  boostValueDecline: 0.05
+  boostDuration: 5

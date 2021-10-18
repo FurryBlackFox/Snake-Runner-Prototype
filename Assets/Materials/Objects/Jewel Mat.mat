@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Jewel Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5b497efc9d40b4e478e97fb971a841ce, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_0d2d332da26a414ea67892331d6c809e: 0.5
+    - Vector1_52f9be8783974935a5fc1b9f755b80fe: 0.5
+    - Vector1_78b0dc016486401f9ca589a59c15570a: 0
+    - Vector1_876ef322ac774342993af191e6454b69: 0
+    - Vector1_a3e3e19427d54f3e85b61754fe94efa0: 0
+    - Vector1_dfa720a368fe421eae862cd9ba75336c: 0.25
+    m_Colors:
+    - Color_3d71dab2a9df4624a01c98008f762a58: {r: 0.9389472, g: 0.6839622, b: 1, a: 0}
+    - Color_58b1e107cf7141b1a6d7d0ea10f1830e: {r: 1, g: 1, b: 1, a: 0}
+    - Color_bf69196cbb2848f69da10f4b1f85b092: {r: 0, g: 0, b: 0, a: 0}
+    - Color_f6c58184c78c404b98f06d63f437b625: {r: 0.8225136, g: 0, b: 1, a: 0}
+  m_BuildTextureStacks: []

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ba987eafea0fd40ad057138be72282, type: 3}
+  m_Name: UI Settings
+  m_EditorClassIdentifier: 
+  screenDimmerTweenTime: 0.5
+  startScreenDimmerTweenTime: 0.75
+  popUpWindowTweenTime: 0.5
+  popUpWindowShowEase: 27
+  popUpWindowHideEase: 26
+  counterTweenTime: 0.25
+  counterTweenAdditiveScale: 0.2
+  snakeFoodCounterTextPrefab: {fileID: 6061591754674758310, guid: 453d6774c287b7e458c286205adf0ee8, type: 3}
+  foodCounterTextMoveDistance: 1.5
+  foodCounterTextTweenTime: 1
+  foodCounterTextEase: 21

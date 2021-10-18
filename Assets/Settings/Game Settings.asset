@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e892d3f8d78330f4eb8434ee73576013, type: 3}
+  m_Name: Game Settings
+  m_EditorClassIdentifier: 
+  targetFrameRate: 120
+  timeToCompletelyStopTime: 0.01
+  restartDelay: 2
+  gameSpeed: 10
+  gameSpeedGain: 150
+  burstGameSpeed: 30
+  borderOffset: 0.375
+  roadWidth: 7.5
+  platformSpawnOffset: 75
+  platformDestructionOffset: -30
+  roadPartsToNewCheckPoint: 5
+  initialDefaultRoadsCount: 2
+  probabilityToSpawnJewelsPlatform: 0.5
+  checkPointRoadPartPrefab: {fileID: 3228496313674165393, guid: bf0fda7e2772ddb4b949d3f111a32e5d, type: 3}
+  defaultRoadPartPrefab: {fileID: 7979421419741414659, guid: 177d7fb3bb6a936419b0b9f4b6a11413, type: 3}
+  foodRoadParts:
+  - {fileID: 7979421419741414659, guid: 1db333ef018698742a30856c6d668858, type: 3}
+  - {fileID: 7979421419741414659, guid: 6d739a1f0edce14418e6925401147140, type: 3}
+  - {fileID: 7979421419741414659, guid: f38437fc060a9e841bb11501b8a45172, type: 3}
+  - {fileID: 7979421419741414659, guid: aba15b42c7c41734e98159889d2d7477, type: 3}
+  jewelsRoadParts:
+  - {fileID: 5751241033895477662, guid: 57bec06008ef19f448fbbe8a59eebd98, type: 3}
+  - {fileID: 5751241033895477662, guid: f3f693e675aa4c14bbbc013378d7d78f, type: 3}
+  - {fileID: 5751241033895477662, guid: deb5f8346f1282b498df7e73c67eef81, type: 3}
+  - {fileID: 5751241033895477662, guid: 103961d55b808ac40bd44546563fa69b, type: 3}
+  - {fileID: 5751241033895477662, guid: 0fc1df0c77aef944f9d84d531d6e4d35, type: 3}
+  - {fileID: 5751241033895477662, guid: aa8193cc461f91643859938bb88791cc, type: 3}
+  jewelRotationSpeed: 60
+  foodSpawnerRadius: 1.5
+  maxFoodSpawnCount: 5
+  maxWrongSpawnAtteptsCount: 10
+  minSqrDistanceBetweenFood: 0.5
+  probabilityToSpawnCurrentFoodType: 0.35
+  probabilityToSpawnJewel: 0.25
+  foodTypes:
+  - {fileID: 11400000, guid: b72d1f2b1798ef94cbd6f573f4434136, type: 2}
+  - {fileID: 11400000, guid: dd07d4f140e18514282b7aee7ed0f36d, type: 2}
+  - {fileID: 11400000, guid: 8cb03b3987e8242429ad6ea98eb35353, type: 2}
+  - {fileID: 11400000, guid: 1e0a9c2fa4fe8db4e85a7c99a81b6230, type: 2}
+  - {fileID: 11400000, guid: 80ed715a3ce9e7b48a8a6cb33b06c48a, type: 2}
+  - {fileID: 11400000, guid: a8adef0a870389a42bd5bf6b9bd5f73f, type: 2}
+  objectPoolSize: 50
+  foodPrefab: {fileID: 5220414746911069592, guid: 27c7f667232f65d47934b264e9000d93, type: 3}
+  jewelPrefab: {fileID: 3483882230002600703, guid: aa1e19fec2a2da6488a649dcf7c0b372, type: 3}
