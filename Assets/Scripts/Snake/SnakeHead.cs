@@ -99,8 +99,6 @@ public class SnakeHead : SnakeSegment
             }
         }
         
-        
-        
         var newPos = transform.position;
         newPos.x += horizontalMovement;
         transform.position = newPos;

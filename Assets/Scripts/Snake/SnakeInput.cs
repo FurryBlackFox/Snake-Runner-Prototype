@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SnakeInput : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SnakeInput : MonoBehaviour
     private Camera cashedCamera;
     private SnakeSettings snakeSettings;
     private GameSettings gameSettings;
+    
     private void Awake()
     {
         cashedCamera = Camera.main;
@@ -39,6 +41,11 @@ public class SnakeInput : MonoBehaviour
     {
         if(!Snake.inputEnabled)
             return;
+        
+        
+        if(EventSystem.current.IsPointerOverGameObject())
+            return;
+
         var screenRay = cashedCamera.ScreenPointToRay(Input.mousePosition);
         var value = 0f;
         if (Physics.Raycast(screenRay, out var hitInfo, snakeSettings.maxRaycastDistance,

@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Food
   - Snake
+  - UI
   layers:
   - Default
   - TransparentFX

@@ -23,4 +23,9 @@ public class UISettings : ScriptableObject
     [Min(0f)] public float foodCounterTextMoveDistance = 2f;
     [Min(0f)] public float foodCounterTextTweenTime = 1f;
     public Ease foodCounterTextEase = Ease.InQuad;
+
+    [Header("Start Screen")] 
+    [Min(0f)] public float textTweenAdditiveScale = 0.1f;
+    [Min(0f)] public float textTweenTime = 0.5f;
+    [Min(0)] public int textTweenVibratio = 1;
 }

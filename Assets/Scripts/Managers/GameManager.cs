@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        StopGame();
+        
         if (!S)
             S = this;
 
@@ -112,6 +114,7 @@ public class GameManager : MonoBehaviour
     public void StopGame()
     {
         Time.timeScale = 0;
+        Snake.inputEnabled = false;
     }
     
 
@@ -123,6 +126,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         Time.timeScale = 1f;
+        Snake.inputEnabled = true;
     }
 
     public void RestartGame()

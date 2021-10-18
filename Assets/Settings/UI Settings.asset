@@ -23,3 +23,6 @@ MonoBehaviour:
   foodCounterTextMoveDistance: 1.5
   foodCounterTextTweenTime: 1
   foodCounterTextEase: 21
+  textTweenAdditiveScale: 0.1
+  textTweenTime: 1
+  textTweenVibratio: 1
