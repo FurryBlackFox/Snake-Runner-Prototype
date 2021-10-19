@@ -28,9 +28,13 @@ public class SnakeBodyPart : SnakeSegment
     public void FindMarkerInQueue()
     {
         var parentPos = parent.transform.position;
-        
-        if(currentMarker == null)
-            currentMarker ??= parent.markerManager.Peek();
+
+        if (currentMarker == Marker.Zero)
+        {
+            if(parent.markerManager.Count > 0)
+                currentMarker = parent.markerManager.Peek();
+        }
+             
         
         var testedMarker = parent.markerManager.Count > 0 ? parent.markerManager.Peek() : currentMarker;
         var differenceWithParent = parentPos - testedMarker.position;
@@ -66,14 +70,14 @@ public class SnakeBodyPart : SnakeSegment
     {
         while (parent.markerManager.Count > 1)
         {
-            testedMarker = parent.markerManager.GetMarker();
+            testedMarker = parent.markerManager.Dequeue();
             var differenceWithParent = parentPos - testedMarker.position;
             var nextMarker = parent.markerManager.Peek();
             var nextDifferenceWithParent = parentPos - nextMarker.position;
 
             if (nextDifferenceWithParent.magnitude < snakeSettings.spawnOffset)
             {
-                testedMarker = GenerateMidMarker(testedMarker, nextMarker,
+                testedMarker =  GenerateMidMarker(testedMarker, nextMarker,
                     differenceWithParent.magnitude, nextDifferenceWithParent.magnitude);
                 break;
             }
@@ -84,13 +88,15 @@ public class SnakeBodyPart : SnakeSegment
     private Marker GenerateMidMarker(Marker firstMarker, Marker secondMarker, float firstPosMagn, float 
     secondPosMagn)
     {
+        if (firstMarker == secondMarker)
+            return firstMarker;
         var dif = firstPosMagn - snakeSettings.spawnOffset;
         var tValue = dif / (firstPosMagn - secondPosMagn);
 
         var midPos = Vector3.Lerp(firstMarker.position, secondMarker.position, tValue);
         var midRot = Quaternion.Lerp(firstMarker.rotation, secondMarker.rotation, tValue);
         
-        return markerManager.CreateMarker(midPos, midRot);
+        return new Marker(midPos, midRot);
     }
     
 

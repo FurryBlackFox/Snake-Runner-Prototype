@@ -4,39 +4,55 @@ using UnityEngine;
 
 public class MarkerManager //seems like a good idea but a crooked implementation 
 {
-    private Queue<Marker> queue = new Queue<Marker>();
+    //private Queue<Marker> queue = new Queue<Marker>();
+    private List<Marker> markers = new List<Marker>();
 
-    public int Count => queue.Count;
+    public int Count => markers.Count;
 
-
-    public Marker GetMarker()
+    public MarkerManager()
     {
-        var marker = queue.Dequeue();
-        marker.Unsubscribe();
-        return marker;
+        Subscribe();
+    }
+
+    ~MarkerManager()
+    {
+        Unsubscribe();
     }
     
+    public void Subscribe()
+    {
+        GameManager.OnUpdatePosition += UpdatePositions;
+    }
+
+    public void Unsubscribe()
+    {
+        GameManager.OnUpdatePosition -= UpdatePositions;
+    }
+
+    private void UpdatePositions(float deltaSpeed)
+    {
+        for (var index = 0; index < markers.Count; index++)
+        {
+            var marker = markers[index];
+            marker.position.z += deltaSpeed;
+            markers[index] = marker;
+        }
+    }
+
     public Marker Peek()
     {
-        return queue.Peek();
+        return markers[0];
+    }
+
+    public Marker Dequeue()
+    {
+        var marker = markers[0];
+        markers.RemoveAt(0);
+        return marker;
     }
 
     public void Enqueue(Marker marker)
     {
-        marker.Subscribe();
-        queue.Enqueue(marker);
-    }
-
-    public Marker CreateMarker(Vector3 postion, Quaternion rotation)
-    {
-        var marker = ObjectPoolsManager.MarkerObjectPool.Get();
-        marker.position = postion;
-        marker.rotation = rotation;
-        return marker;
-    }
-
-    public void DeleteFirstMarker()
-    {
-        queue.Dequeue().ReturnToPool();
+        markers.Add(marker);
     }
 }

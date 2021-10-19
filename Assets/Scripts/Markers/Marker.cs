@@ -3,55 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// markers generate quite a lot of garbage per frame.
-/// need more time for optimization.
-/// current variants: returning back to struct or finish object pooling
-/// </summary>
-public class Marker : IPoolableObject 
+#pragma warning disable 660,661
+public struct Marker
+#pragma warning restore 660,661
 {
     public Vector3 position;
     public Quaternion rotation;
 
-    private ObjectPool<Marker> assignedPool;
+    public static Marker Zero => new Marker(Vector3.zero, Quaternion.identity);
 
-    // ~Marker() //Still dont know how to stable return object to the pool
-    // {
-    //     assignedPool?.Return(this);
-    //     Debug.Log(assignedPool);
-    // }
-    
-    public void Subscribe()
+    public Marker(Vector3 position, Quaternion rotation)
     {
-        GameManager.OnUpdatePosition += UpdatePosition;
+        this.position = position;
+        this.rotation = rotation;
     }
 
-    public void Unsubscribe()
+    public static bool operator == (Marker m1, Marker m2)
     {
-        GameManager.OnUpdatePosition -= UpdatePosition;
-    }
-    
-    private void UpdatePosition(float deltaSpeed)
-    {
-        position.z += deltaSpeed;
+        return m1.position == m2.position && Mathf.Abs(Quaternion.Dot(m1.rotation, m2.rotation)) < 1 - float.Epsilon;
     }
 
-
-    public void AssignToPool<T>(ObjectPool<T> objectPool) where T : IPoolableObject, new()
+    public static bool operator !=(Marker m1, Marker m2)
     {
-        assignedPool = objectPool as ObjectPool<Marker>;
-    }
-
-    public void ReturnToPool()
-    {
-        assignedPool.Return(this);
-    }
-
-    public void Hide()
-    {
-    }
-
-    public void Reveal()
-    {
+        return !(m1 == m2);
     }
 }

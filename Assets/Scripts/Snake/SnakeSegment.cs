@@ -97,9 +97,9 @@ public abstract class SnakeSegment : MonoBehaviour
     {
         if (markerManager.Count >= snakeSettings.maxMarkersPerSegment)
         {
-            markerManager.DeleteFirstMarker();
+            markerManager.Dequeue();
         }
-        var marker = markerManager.CreateMarker(transform.position, transform.rotation);
+        var marker = new Marker(transform.position, transform.rotation);
         markerManager.Enqueue(marker);
     }
     
